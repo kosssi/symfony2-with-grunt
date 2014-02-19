@@ -1,5 +1,7 @@
-.kosssi.reveal section {
-  min-height: 80%;
+.kosssi.reveal section img {
+  background: none;
+  border-width: 0;
+  box-shadow: none;
 }
 .kosssi.reveal pre {
   width: 100%;

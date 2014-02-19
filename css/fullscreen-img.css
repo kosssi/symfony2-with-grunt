@@ -1,0 +1,13 @@
+/*********************************************
+ * Fullscreen images
+ *********************************************/
+
+.fullscreen {
+    background-size: cover;
+    -moz-background-size: cover;
+}
+
+.fullscreen .state-background {
+    width: 100%;
+    height: 100%;
+}

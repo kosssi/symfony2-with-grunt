@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="css/reveal.min.css">
     <link rel="stylesheet" href="css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="css/fullscreen-img.css">
 
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -29,7 +30,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body class="fullscreen">
 
 <div class="reveal kosssi">
 
@@ -45,71 +46,208 @@
         </section>
 
         <section data-background-transition="slide">
-            <h2>Symfony</h2>
-            <ul>
-                <li>JavaScript</li>
-                <li>Cascading Style Sheets</li>
-                <li>Assetic</li>
-            </ul>
+            <section data-background-transition="slide" data-background-color="#000000">
+                <img width="50%" alt="Symfony" src="img/symfony.png">
+            </section>
+            <section>
+                <h2>Symfony</h2>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Cascading Style Sheets</li>
+                    <li>Assetic</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Structure dans symfony</h2>
+                <pre><code>app
+    Ressource
+        public
+            coffee
+            less</code></pre>
+            </section>
+            <section>
+                <h2>assets:install --symlink</h2>
+                <pre><code>web
+    bundles
+        app
+            coffee
+            less
+        kosssimyalbums
+            coffee
+            less</code></pre>
+            </section>
         </section>
 
         <section data-background-transition="slide">
-            <h2>Node.js</h2>
-            <ul>
-                <li>Tellement plus hype !!!</li>
-                <li>photo de valentin</li>
-                <li>Installation avec NVM</li>
-                <pre><code>curl https://raw.github.com/creationix/nvm/master/install.sh | sh</code></pre>
-            </ul>
+            <section data-background-transition="slide" fullscreen-img="img/nodejs.png">
+            </section>
+            <section data-background-transition="slide">
+                <h2>Node.js</h2>
+                <ul>
+                    <li>Tellement plus hype !!!</li>
+                    <li>Installation avec NVM</li>
+                    <pre><code>curl https://raw.github.com/creationix/nvm/master/install.sh | sh</code></pre>
+                </ul>
+            </section>
         </section>
 
         <section data-background-transition="slide">
-            <h2>Node Package Manager (NPM)</h2>
-            <ul>
-                <li>package.json</li>
-                <li class="unstyle">
+            <section>
+                <img width="90%" alt="NPM" src="img/npm.png">
+            </section>
+            <section>
+                <h2>Node Package Manager (NPM)</h2>
+                <ul>
+                    <li>apt-get de node.js</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Configuration</h2>
+                <ul>
+                    <li>package.json</li>
+                    <li class="unstyle">
                     <pre><code class="json">{
-  "name": "symfony-grunt",
-  "version": "0.3.0",
-  "author": "Simon Constans &lt;contact@sconstans.fr&gt;",
-  "description": "a presentation of grunt with symfony",
-  "scripts": {
-    "postinstall": "bower install",
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kosssi/symfony-grunt.git"
-  },
-  "dependencies" : {
-    "bower"       :  "*",
-    "livereloadx" :  "0.1.x",
-    "grunt"       :  "0.2.x",
-    "grunt-php"   :  "0.1.x",
-  },
-  "license": "MIT"
+    "name": "symfony-grunt",
+    "version": "0.3.0",
+    "author": "Simon Constans &lt;contact@sconstans.fr&gt;",
+    "description": "a presentation of grunt with symfony",
+    "scripts": {
+        "postinstall": "bower install",
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kosssi/symfony-grunt.git"
+    },
+    "dependencies" : {
+        "bower"       :  "*",
+        "livereloadx" :  "0.1.x",
+        "grunt"       :  "0.2.x",
+        "grunt-php"   :  "0.1.x",
+    },
+    "license": "MIT"
 }</code></pre>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+        <section data-background-transition="slide" data-background-color="#ffbe00">
+            <section>
+                <img width="90%" alt="Grunt" src="img/gruntjs.jpg">
+            </section>
+            <section>
+                <h2>C'est un écosystème</h2>
+                <img width="90%" alt="Grunt plugin" src="img/grunt-plugin.png">
+            </section>
+            <section>
+                <h2>Grunt</h2>
+                <ul>
+                    <li>Créer des tâches automatisées en JavaScript</li>
+                    <li>Gruntfile.js</li>
+                </ul>
+            </section>
+            <section>
+                <h2></h2>
+            </section>
+        </section>
+
+        <section data-background-transition="slide" data-background-color="#d0d0d0">
+            <section data-background-color="#d0d0d0">
+                <img width="70%" alt="Coffeescript" src="img/coffeescript.jpg">
+            </section>
+            <section>
+                <h2>JavaScript WTF?</h2>
+            </section>
+            <section>
+                <!-- http://fr.clever-age.com/veille/blog/du-javascript-avec-coffeescript.html -->
+                <h2>Coffeescript</h2>
+                <ul>
+                    <li>Pas de point virgule</li>
+                    <li>Indentation définit les blocs</li>
+                    <li>Définition et appels de fonction simplifiés</li>
+                    <li>En forme d'expression</li>
+                    <li>Manipulation de tableau simplifiée</li>
+                    <li>Boucle for "logique"</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Configuration Grunt</h2>
+                <pre><code class="js">grunt.loadNpmTasks('grunt-contrib-coffee');
+grunt.initConfig({
+    coffee: {
+        compileBare: {
+            options: {
+                bare: true
+            },
+            files: filesCoffee
+        }
+    },
+});
+grunt.registerTask('javascript', ['coffee:discovering', 'coffee', 'concat:js', 'uglify']);
+grunt.registerTask('coffee:discovering', 'This is a function', function() {
+    // COFFEE Files management
+    // Source COFFEE files are located inside : bundles/[bundle]/coffee/
+    // Destination JS files are located inside : built/[bundle]/js/
+    var mappingFileCoffee = grunt.file.expandMapping(
+        ['*/coffee/*.coffee', '*/coffee/*/*.coffee'],
+        'web/built/', {
+            cwd: 'web/bundles/',
+            rename: function(dest, matchedSrcPath, options) {
+                return dest + matchedSrcPath.replace(/coffee/g, 'js');
+            }
+        });
+
+    grunt.util._.each(mappingFileCoffee, function(value) {
+        // Why value.src is an array ??
+        filesCoffee[value.dest] = value.src[0];
+    });
+});
+                </code></pre>
+            </section>
+        </section>
+
+        <section data-background-transition="slide" data-background-color="#315aa0">
+            <section>
+                <img width="40%" alt="less" src="img/less.png">
+            </section>
+            <section>
+                <!-- http://www.lije-creative.com/less-css/ -->
+                <h2>Less</h2>
+                <ul>
+                    <li>Utilisation de variables</li>
+                    <li>Création de mixins</li>
+                    <li>Définition de règles imbriquées (héritage)</li>
+                    <li>Création de fonctions</li>
+                    <li>Mise en place d’opérations "complexes"</li>
+                    <li>Altération des couleurs</li>
+                </ul>
+            </section>
         </section>
 
         <section data-background-transition="slide">
-            <h2>Grunt</h2>
-
-        </section>
-
-        <section data-background-transition="slide">
-            <h2>Coffeescript</h2>
-        </section>
-
-        <section data-background-transition="slide">
-            <h2>Less</h2>
-        </section>
-
-        <section data-background-transition="slide">
-            <h2>Livereload</h2>
+            <section>
+                <img width="70%" alt="livereload" src="img/livereload.png">
+            </section>
+            <section>
+                <h2>Livereload</h2>
+                <p>Rechargement de page automatique après un changement</p>
+                <br>
+                <p>Installation :</p>
+                <ul>
+                    <li>En ajoutant un js + plugin navigateur</li>
+                    <li>ou mieux...</li>
+                    <li>en passant par serveur proxy</li>
+                </ul>
+            </section>
         </section>
 
         <section>
+            <h1>Demo !!!</h1>
+        </section>
+
+        <section fullscreen-img="img/sandwitch.jpg">
+            <!-- http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/ -->
             <h1>THE END</h1>
             <h3>Question ?</h3>
         </section>
@@ -126,10 +264,10 @@
     // Full list of configuration options available here:
     // https://github.com/hakimel/reveal.js#configuration
     Reveal.initialize({
-        controls: false,
+        controls: true,
         progress: true,
         history: true,
-        center: false,
+        center: true,
 
         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
         transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
@@ -140,6 +278,7 @@
 
         // Optional libraries used to extend on reveal.js
         dependencies: [
+            { src: 'lib/js/fullscreen-img.js' },
             { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
             { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
             { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
