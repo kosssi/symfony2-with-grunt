@@ -1,0 +1,15 @@
+.kosssi.reveal section {
+  min-height: 80%;
+}
+.kosssi.reveal pre {
+  width: 100%;
+}
+.kosssi.reveal h2 {
+  text-transform: none;
+}
+.kosssi.reveal li.unstyle {
+  list-style: none;
+}
+.kosssi.reveal code {
+  height: 100%;
+}
