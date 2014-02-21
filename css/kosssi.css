@@ -3,6 +3,26 @@
   border-width: 0;
   box-shadow: none;
 }
+.kosssi.reveal .grunt {
+  color: #32261a;
+}
+.kosssi.reveal .grunt h1,
+.kosssi.reveal .grunt h2,
+.kosssi.reveal .grunt h3,
+.kosssi.reveal .grunt h4,
+.kosssi.reveal .grunt h5 {
+  color: #32261a;
+}
+.kosssi.reveal .coffee {
+  color: #000000;
+}
+.kosssi.reveal .coffee h1,
+.kosssi.reveal .coffee h2,
+.kosssi.reveal .coffee h3,
+.kosssi.reveal .coffee h4,
+.kosssi.reveal .coffee h5 {
+  color: #000000;
+}
 .kosssi.reveal pre {
   width: 100%;
 }
@@ -14,4 +34,5 @@
 }
 .kosssi.reveal code {
   height: 100%;
+  max-height: 600px;
 }

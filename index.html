@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Symfony avec html</title>
+    <title>Symfony avec grunt</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
@@ -37,18 +37,28 @@
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
 
+
+
+
+
         <section data-background-transition="slide">
             <h1>Symfony et Grunt</h1>
-            <h3>Node.js, NPM, Coffeescript, less, livereload</h3>
+            <h3>Accélérer son développement</h3>
             <p>
                 <small>Créé par <a href="http://sconstans.fr">Simon Constans</a> / <a href="http://twitter.com/kosssi">@kosssi</a></small>
             </p>
         </section>
 
-        <section data-background-transition="slide">
-            <section data-background-transition="slide" data-background-color="#000000">
+
+
+
+
+        <section data-background-transition="slide" data-background-color="#000000">
+
+            <section data-background-transition="slide">
                 <img width="50%" alt="Symfony" src="img/symfony.png">
             </section>
+
             <section>
                 <h2>Symfony</h2>
                 <ul>
@@ -64,46 +74,170 @@
     Ressource
         public
             coffee
+            images
             less</code></pre>
             </section>
-            <section>
-                <h2>assets:install --symlink</h2>
-                <pre><code>web
-    bundles
-        app
-            coffee
-            less
-        kosssimyalbums
-            coffee
-            less</code></pre>
-            </section>
+
         </section>
 
-        <section data-background-transition="slide">
-            <section data-background-transition="slide" fullscreen-img="img/nodejs.png">
+
+
+
+
+        <section data-background-transition="slide" data-background-color="#d0d0d0" class="coffee">
+
+            <section data-background-color="#d0d0d0">
+                <img width="70%" alt="Coffeescript" src="img/coffeescript.jpg">
             </section>
-            <section data-background-transition="slide">
-                <h2>Node.js</h2>
+
+            <section>
+                <h2>JavaScript WTF?</h2>
+            </section>
+
+            <section>
+                <!-- http://fr.clever-age.com/veille/blog/du-javascript-avec-coffeescript.html -->
+                <h2>Coffeescript</h2>
                 <ul>
-                    <li>Tellement plus hype !!!</li>
-                    <li>Installation avec NVM</li>
-                    <pre><code>curl https://raw.github.com/creationix/nvm/master/install.sh | sh</code></pre>
+                    <li>Pas de point virgule</li>
+                    <li>Indentation définit les blocs</li>
+                    <li>Définition et appels de fonction simplifiés</li>
+                    <li>En forme d'expression</li>
+                    <li>Manipulation de tableau simplifiée</li>
+                    <li>Boucle for "logique"</li>
                 </ul>
             </section>
+
         </section>
 
-        <section data-background-transition="slide">
+
+
+
+
+        <!-- http://www.lije-creative.com/less-css/ -->
+        <section data-background-transition="slide" data-background-color="#315aa0">
+
+            <section>
+                <img width="40%" alt="less" src="img/less.png">
+            </section>
+
+            <section>
+                <h2>Less</h2>
+                <ul>
+                    <li>Utilisation de variables</li>
+                    <li>Création de mixins</li>
+                    <li>Définition de règles imbriquées (héritage)</li>
+                    <li>Création de fonctions</li>
+                    <li>Mise en place d’opérations "complexes"</li>
+                    <li>Altération des couleurs</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Utilisation de variables</h3>
+                <pre><code class="less">// size
+@headerSize: 40px;
+@defaultRadius: 5px;
+
+// color : http://pltts.me/palettes/148712
+@color1: #FF9900;
+@color2: #424242;
+@color3: #E9E9E9;
+@color4: #BCBCBC;
+@color5: #3299BB;
+
+@writeColor: @color5;
+@flashColor: @color1;
+@backgroundColor: @color3;
+@highlightBackgroundColor: @color4;</code></pre>
+            </section>
+
+            <section>
+                <h3>Création de mixins</h3>
+                <pre><code class="less">.border-box {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+* {
+    .border-box;
+}</code></pre>
+            </section>
+
+            <section>
+                <h3>Définition de règles imbriquées (héritage)</h3>
+                <pre><code class="less">header {
+    height: @headerSize;
+    background-color: @highlightBackgroundColor;
+    .border-radius();
+
+    h1 {
+        height: @headerSize;
+        line-height: @headerSize;
+        display: inline-block;
+    }
+
+    .remove-album {
+        color: @red;
+
+        form {
+            display: none;
+        }
+    }
+}</code></pre>
+            </section>
+
+            <section>
+                <h3>Création de fonctions</h3>
+                <pre><code class="less">.box-sizing (@box-sizing) {
+    -moz-box-sizing: @box-sizing;
+    -webkit-box-sizing: @box-sizing;
+    box-sizing: @box-sizing;
+}
+.border-box {
+    .box-sizing (border-box);
+}</code></pre>
+            </section>
+
+        </section>
+
+
+
+
+
+        <section data-background-transition="slide" data-background-color="#ffbe00" class="grunt">
+            <section>
+                <img width="90%" alt="Grunt" src="img/gruntjs.jpg">
+            </section>
+            <section>
+                <h2>Grunt</h2>
+                <ul>
+                    <li>Créer des tâches automatisées en JavaScript :
+                        <ul>
+                            <li>Création de symlink</li>
+                            <li>Concaténation de fichier</li>
+                            <li>Compilation de fichier CoffeeScript</li>
+                            <li>Compilation de fichier less</li>
+                            <li>Minification de fichier JavaScript</li>
+                            <li>Minification de fichier CSS</li>
+                            <li>Lancement d'un serveur PHP</li>
+                            <li>Lancement d'un proxy livereload</li>
+                            <li>...</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Tout un écosystème</h2>
+                <img width="90%" alt="Grunt plugin" src="img/grunt-plugin.png">
+            </section>
             <section>
                 <img width="90%" alt="NPM" src="img/npm.png">
             </section>
-            <section>
-                <h2>Node Package Manager (NPM)</h2>
-                <ul>
-                    <li>apt-get de node.js</li>
-                </ul>
+            <section data-background-transition="slide">
+                <img width="90%" alt="Nodejs" src="img/nodejs.png">
             </section>
             <section>
-                <h2>Configuration</h2>
+                <h2>Configuration de NPM</h2>
                 <ul>
                     <li>package.json</li>
                     <li class="unstyle">
@@ -130,49 +264,75 @@
                     </li>
                 </ul>
             </section>
-        </section>
 
-        <section data-background-transition="slide" data-background-color="#ffbe00">
             <section>
-                <img width="90%" alt="Grunt" src="img/gruntjs.jpg">
-            </section>
-            <section>
-                <h2>C'est un écosystème</h2>
-                <img width="90%" alt="Grunt plugin" src="img/grunt-plugin.png">
-            </section>
-            <section>
-                <h2>Grunt</h2>
+                <h2>Configuration de Grunt</h2>
                 <ul>
-                    <li>Créer des tâches automatisées en JavaScript</li>
                     <li>Gruntfile.js</li>
                 </ul>
             </section>
-            <section>
-                <h2></h2>
-            </section>
-        </section>
 
-        <section data-background-transition="slide" data-background-color="#d0d0d0">
-            <section data-background-color="#d0d0d0">
-                <img width="70%" alt="Coffeescript" src="img/coffeescript.jpg">
+            <section>
+                <h2>Création de symlink</h2>
+                <pre><code class="js">grunt.loadNpmTasks('grunt-contrib-symlink');
+grunt.initConfig({
+    symlink: {
+        // app/Resources/public/ doit être disponible via web/bundles/app/
+        app: {
+            src: 'app/Resources/public/',
+            dest: 'web/bundles/app'
+        },
+        dropzone_image: {
+            src: 'bower_components/dropzone/downloads/images/spritemap.png',
+            dest: 'web/images/spritemap.png'
+        },
+        fontawesome_font: {
+            src: 'bower_components/font-awesome/fonts/',
+            dest: 'web/fonts'
+        }
+    }
+});
+grunt.registerTask('init', ['symlink', 'default']);</code></pre>
             </section>
             <section>
-                <h2>JavaScript WTF?</h2>
+                <h2>Concaténation de fichier</h2>
+                <pre><code>grunt.loadNpmTasks('grunt-contrib-concat');
+grunt.initConfig({
+    concat: {
+        js: {
+            src: [
+                'web/built/bower.js',
+                'web/built/*/js/*.js',
+                'web/built/*/js/*/*.js'
+            ],
+            dest: 'web/built/all.js'
+        },
+        css: {
+            src: [
+                'web/built/bower.css',
+                'web/built/*/css/*.css',
+                'web/built/*/css/*/*.css'
+            ],
+            dest: 'web/built/all.css'
+        }
+    },
+});</code></pre>
             </section>
             <section>
-                <!-- http://fr.clever-age.com/veille/blog/du-javascript-avec-coffeescript.html -->
-                <h2>Coffeescript</h2>
-                <ul>
-                    <li>Pas de point virgule</li>
-                    <li>Indentation définit les blocs</li>
-                    <li>Définition et appels de fonction simplifiés</li>
-                    <li>En forme d'expression</li>
-                    <li>Manipulation de tableau simplifiée</li>
-                    <li>Boucle for "logique"</li>
-                </ul>
+                <h2>Minification de fichier JavaScript</h2>
+                <pre><code>grunt.loadNpmTasks('grunt-contrib-uglify');
+grunt.initConfig({
+    uglify: {
+        dist: {
+            files: {
+                'web/built/all.min.js': ['web/built/all.js']
+            }
+        }
+    }
+});</code></pre>
             </section>
             <section>
-                <h2>Configuration Grunt</h2>
+                <h2>CoffeeScript</h2>
                 <pre><code class="js">grunt.loadNpmTasks('grunt-contrib-coffee');
 grunt.initConfig({
     coffee: {
@@ -207,28 +367,17 @@ grunt.registerTask('coffee:discovering', 'This is a function', function() {
             </section>
         </section>
 
-        <section data-background-transition="slide" data-background-color="#315aa0">
-            <section>
-                <img width="40%" alt="less" src="img/less.png">
-            </section>
-            <section>
-                <!-- http://www.lije-creative.com/less-css/ -->
-                <h2>Less</h2>
-                <ul>
-                    <li>Utilisation de variables</li>
-                    <li>Création de mixins</li>
-                    <li>Définition de règles imbriquées (héritage)</li>
-                    <li>Création de fonctions</li>
-                    <li>Mise en place d’opérations "complexes"</li>
-                    <li>Altération des couleurs</li>
-                </ul>
-            </section>
-        </section>
+
+
+
+
 
         <section data-background-transition="slide">
+
             <section>
                 <img width="70%" alt="livereload" src="img/livereload.png">
             </section>
+
             <section>
                 <h2>Livereload</h2>
                 <p>Rechargement de page automatique après un changement</p>
@@ -240,11 +389,39 @@ grunt.registerTask('coffee:discovering', 'This is a function', function() {
                     <li>en passant par serveur proxy</li>
                 </ul>
             </section>
+
+            <section>
+                <h2>Installation</h2>
+                <pre><code>npm install --save livereloadx</code></pre>
+            </section>
+
+            <section>
+                <h2>Configuration</h2>
+                <pre><code class="javascript">grunt.loadNpmTasks('livereloadx');
+grunt.initConfig({
+    livereloadx: {
+        port: 8000,
+        proxy: "http://localhost:35729/",
+        dir: 'web/built'
+    }
+});</code></pre>
+            </section>
+
         </section>
+
+
+
+
+
 
         <section>
             <h1>Demo !!!</h1>
         </section>
+
+
+
+
+
 
         <section fullscreen-img="img/sandwitch.jpg">
             <!-- http://www.24joursdeweb.fr/2013/automatisez-votre-workflow-front-end/ -->
